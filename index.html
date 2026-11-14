@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jungle Escape V12</title>
+  <link rel="stylesheet" href="./style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="./game.js"></script>
+</head>
+<body>
+  <main id="game">
+
+    <section id="menu" class="panel">
+      <p class="eyebrow">AN ANCIENT JUNGLE ADVENTURE</p>
+      <h1>JUNGLE ESCAPE <span>V12</span></h1>
+      <h2>THE DEMON'S REVENGE</h2>
+      <p>Choose your explorer and escape the mysterious jungle!</p>
+
+      <h3>SELECT YOUR EXPLORER</h3>
+
+      <div class="character-row">
+        <button class="character-button selected" data-character="0">Explorer 1</button>
+        <button class="character-button" data-character="1">Explorer 2</button>
+        <button class="character-button" data-character="2">Explorer 3</button>
+      </div>
+
+      <p id="loading-status">Preparing explorers...</p>
+      <button id="start-button" class="main-button">START ADVENTURE</button>
+
+      <p class="instructions">
+        Move: A / D or Arrow Keys<br>
+        Jump: W / Space / Up Arrow<br>
+        Slide: S / Down Arrow<br>
+        Change camera: C<br>
+        Pause: P
+      </p>
+    </section>
+
+    <section id="hud" class="hidden">
+      <div class="hud-item">SCORE<strong id="score">0</strong></div>
+      <div class="hud-item">COINS<strong id="coins">0</strong></div>
+      <div class="hud-item">BEST<strong id="best">0</strong></div>
+      <div class="hud-item power-status" id="power-status">NO POWER-UP</div>
+      <button id="camera-button">CAMERA: FOLLOW</button>
+      <button id="pause-button">PAUSE</button>
+    </section>
+
+    <div id="message" class="message hidden"></div>
+
+    <section id="game-over" class="panel hidden">
+      <p class="eyebrow">JUNGLE ESCAPE V12</p>
+      <h1>ADVENTURE OVER!</h1>
+      <p>Your score: <strong id="final-score">0</strong></p>
+      <p>Coins collected: <strong id="final-coins">0</strong></p>
+      <button id="restart-button" class="main-button">PLAY AGAIN</button>
+      <button id="menu-button" class="secondary-button">MAIN MENU</button>
+    </section>
+
+    <section id="pause-screen" class="panel hidden">
+      <h1>GAME PAUSED</h1>
+      <button id="resume-button" class="main-button">RESUME</button>
+      <button id="quit-button" class="secondary-button">MAIN MENU</button>
+    </section>
+
+    <section id="victory-screen" class="panel hidden">
+      <h1>YOU ESCAPED!</h1>
+      <p>You survived the jungle!</p>
+      <button id="victory-restart" class="main-button">PLAY AGAIN</button>
+      <button id="victory-menu" class="secondary-button">MAIN MENU</button>
+    </section>
+
+    <div id="touch-controls" class="hidden">
+      <button id="left-button">◀</button>
+      <button id="slide-button">▼</button>
+      <button id="jump-button">▲</button>
+      <button id="right-button">▶</button>
+    </div>
+
+  </main>
+</body>
+</html>
